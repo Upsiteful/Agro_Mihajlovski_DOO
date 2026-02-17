@@ -1,0 +1,207 @@
+
+Products · HTML
+Copy
+
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Katalog Proizvoda | AgroFarm Apoteka</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --dark-green: #0d2818;
+    --mid-green: #1a3d28;
+    --light-green: #2a5e3f;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --text-light: #e8f0eb;
+    --text-muted: #8faa98;
+    --card-bg: rgba(26, 61, 40, 0.6);
+    --border: rgba(201, 168, 76, 0.25);
+  }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Jost', sans-serif; background: var(--dark-green); color: var(--text-light); }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--dark-green); }
+  ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(13,40,24,0.95); backdrop-filter: blur(20px);
+    padding: 16px 60px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 700; color: var(--gold); text-decoration: none; }
+  .nav-logo span { color: var(--text-light); font-weight: 400; font-style: italic; }
+  .nav-back { color: var(--text-muted); text-decoration: none; font-size: 0.82rem; letter-spacing: 1px; transition: color 0.3s; }
+  .nav-back:hover { color: var(--gold); }
+
+  .hero-small {
+    padding: 80px 60px 60px;
+    max-width: 1200px; margin: 0 auto;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero-small .section-label { font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+  .hero-small h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; }
+  .hero-small h1 em { color: var(--gold); font-style: italic; }
+  .hero-small p { color: var(--text-muted); margin-top: 16px; font-size: 0.95rem; line-height: 1.8; max-width: 500px; }
+
+  /* FILTERS */
+  .filters {
+    max-width: 1200px; margin: 0 auto;
+    padding: 40px 60px 0;
+    display: flex; gap: 10px; flex-wrap: wrap;
+  }
+  .filter-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 8px 20px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.78rem; letter-spacing: 1.5px; text-transform: uppercase;
+    cursor: pointer; transition: all 0.3s;
+  }
+  .filter-btn:hover, .filter-btn.active { background: var(--gold); border-color: var(--gold); color: var(--dark-green); }
+
+  /* PRODUCTS */
+  .products-section { max-width: 1200px; margin: 0 auto; padding: 40px 60px 100px; }
+  .products-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px;
+  }
+  .product-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 28px 22px;
+    backdrop-filter: blur(15px);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative; overflow: hidden;
+  }
+  .product-card::before {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    transform: scaleX(0); transition: transform 0.4s;
+  }
+  .product-card:hover { transform: translateY(-5px); border-color: rgba(201,168,76,0.5); box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
+  .product-card:hover::before { transform: scaleX(1); }
+  .product-emoji { font-size: 2.2rem; margin-bottom: 14px; display: block; }
+  .product-cat { font-size: 0.62rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+  .product-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--gold-light); margin-bottom: 6px; }
+  .product-card p { font-size: 0.78rem; color: var(--text-muted); line-height: 1.6; }
+  .product-badge {
+    position: absolute; top: 14px; right: 14px;
+    background: rgba(201,168,76,0.15); border: 1px solid var(--border);
+    font-size: 0.6rem; letter-spacing: 1px; text-transform: uppercase;
+    color: var(--gold); padding: 3px 8px;
+  }
+
+  /* COMING SOON OVERLAY */
+  .coming-soon {
+    text-align: center; padding: 80px 20px;
+    border: 1px dashed var(--border); max-width: 500px; margin: 60px auto;
+  }
+  .coming-soon h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; margin-bottom: 16px; }
+  .coming-soon p { color: var(--text-muted); line-height: 1.8; margin-bottom: 30px; }
+
+  @media (max-width: 768px) {
+    nav { padding: 14px 20px; }
+    .hero-small, .filters, .products-section { padding-left: 20px; padding-right: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Agro<span>Farm</span></a>
+  <a href="index.html" class="nav-back">← Nazad na početnu</a>
+</nav>
+
+<div class="hero-small">
+  <div class="section-label">Katalog</div>
+  <h1>Kompletna<br><em>kolekcija</em></h1>
+  <p>Premium asortiman preparata za zaštitu bilja, ishranu i poboljšanje prinosa.</p>
+</div>
+
+<div class="filters" id="filters">
+  <button class="filter-btn active" onclick="filterProducts('sve', this)">Sve</button>
+  <button class="filter-btn" onclick="filterProducts('herbicid', this)">Herbicidi</button>
+  <button class="filter-btn" onclick="filterProducts('fungicid', this)">Fungicidi</button>
+  <button class="filter-btn" onclick="filterProducts('insekticid', this)">Insekticidi</button>
+  <button class="filter-btn" onclick="filterProducts('djubrivo', this)">Đubriva</button>
+  <button class="filter-btn" onclick="filterProducts('seme', this)">Seme</button>
+  <button class="filter-btn" onclick="filterProducts('ostalo', this)">Ostalo</button>
+</div>
+
+<div class="products-section">
+  <div class="products-grid" id="productsGrid"></div>
+</div>
+
+<script>
+const ALL_PRODUCTS = [
+  { emoji: "🌿", name: "Herbicid Spring Pro", desc: "Efikasna borba sa korovima u žitaricama.", cat: "herbicid", badge: "Bestseler" },
+  { emoji: "🌾", name: "Herbicid Tribunal", desc: "Postemergentna zaštita ozime pšenice.", cat: "herbicid" },
+  { emoji: "🌽", name: "Atrazin 500 SC", desc: "Selektivni herbicid za kukuruz.", cat: "herbicid" },
+  { emoji: "🌻", name: "Herbicid Select", desc: "Suzbijanje uskolisnih korova.", cat: "herbicid" },
+  { emoji: "🍄", name: "Fungicid Mancozeb", desc: "Kontaktni fungicid širokoga spektra.", cat: "fungicid", badge: "Akcija" },
+  { emoji: "🔵", name: "Fungicid Amistar", desc: "Sistemska zaštita suncokreta i kukuruza.", cat: "fungicid" },
+  { emoji: "🌿", name: "Folicur EW 250", desc: "Triazolni fungicid za žitarice.", cat: "fungicid" },
+  { emoji: "🍇", name: "Fungicid Ridomil", desc: "Zaštita vinove loze od plamenjače.", cat: "fungicid" },
+  { emoji: "🐛", name: "Insekticid Lambda", desc: "Kontaktni piretroid za razne štetočine.", cat: "insekticid" },
+  { emoji: "🔴", name: "Akaricid Vertimec", desc: "Suzbijanje pauka crvenih.", cat: "insekticid" },
+  { emoji: "🐞", name: "Insekticid Regent", desc: "Zaštita od žičnjaka i gusenica.", cat: "insekticid", badge: "Novo" },
+  { emoji: "🦟", name: "Insekticid Actara", desc: "Sistemski insekticid za lisne vaši.", cat: "insekticid" },
+  { emoji: "🌱", name: "NPK 15:15:15", desc: "Kompleksno mineralno đubrivo.", cat: "djubrivo", badge: "Bestseler" },
+  { emoji: "💧", name: "Folijarna Ishrana", desc: "Prihrana mikroelementima kroz list.", cat: "djubrivo" },
+  { emoji: "🌾", name: "Urea 46%", desc: "Azotno đubrivo za sve useve.", cat: "djubrivo" },
+  { emoji: "🧪", name: "Humus Plus", desc: "Organski poboljšivač strukture zemljišta.", cat: "djubrivo" },
+  { emoji: "🌰", name: "Pšenica Simonida", desc: "Ozima sorta visokog prinosa.", cat: "seme" },
+  { emoji: "🌽", name: "Hibrid Kukuruza PR37", desc: "Visokoprinosni FAO 400 hibrid.", cat: "seme", badge: "Novo" },
+  { emoji: "🌻", name: "Suncokret Partizan", desc: "Domaća sorta sa visokim sadržajem ulja.", cat: "seme" },
+  { emoji: "🌿", name: "Soja Vojvođanka", desc: "Rana sorta za centralne i severne oblasti.", cat: "seme" },
+  { emoji: "🔬", name: "Analiza Zemljišta", desc: "Hemijska i fizička analiza parcele.", cat: "ostalo" },
+  { emoji: "🪱", name: "Biostimulator Ruter", desc: "Boljl ukorenjavanje sadnica.", cat: "ostalo" },
+  { emoji: "📋", name: "Plan Zaštite", desc: "Godišnji plan tretmana za vaš usev.", cat: "ostalo" },
+  { emoji: "🧴", name: "Adjuvant Mix", desc: "Poboljšivač efikasnosti škropiva.", cat: "ostalo" },
+];
+
+let currentFilter = 'sve';
+
+function filterProducts(cat, btn) {
+  currentFilter = cat;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderProducts();
+}
+
+function renderProducts() {
+  const filtered = currentFilter === 'sve' ? ALL_PRODUCTS : ALL_PRODUCTS.filter(p => p.cat === currentFilter);
+  const grid = document.getElementById('productsGrid');
+  grid.innerHTML = filtered.map(p => `
+    <div class="product-card">
+      ${p.badge ? `<div class="product-badge">${p.badge}</div>` : ''}
+      <span class="product-emoji">${p.emoji}</span>
+      <div class="product-cat">${p.cat}</div>
+      <h3>${p.name}</h3>
+      <p>${p.desc}</p>
+    </div>
+  `).join('');
+
+  // Animate in
+  grid.querySelectorAll('.product-card').forEach((card, i) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(15px)';
+    setTimeout(() => {
+      card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+      card.style.opacity = '1';
+      card.style.transform = 'translateY(0)';
+    }, i * 40);
+  });
+}
+
+renderProducts();
+</script>
+</body>
+</html>
