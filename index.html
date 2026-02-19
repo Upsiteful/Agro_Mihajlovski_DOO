@@ -119,6 +119,14 @@
     position: absolute; inset: 0;
     background: linear-gradient(135deg, #051a0d 0%, #0d2818 40%, #1a3d28 70%, #0a2015 100%);
   }
+  .hero-bg{
+  background:
+    linear-gradient(135deg, #051a0d 0%, #0d2818 40%, #1a3d28 70%, #0a2015 100%),
+    url("pozadina njiva.jpg");
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+}
   .hero-pattern {
     position: absolute; inset: 0;
     background-image:
@@ -337,7 +345,7 @@
     position: relative;
   }
   .about-img-frame {
-    width: 100%; padding-bottom: 110%;
+    width: 100%; padding-bottom: 10%;
     position: relative;
     background: var(--card-bg);
     border: 1px solid var(--border);
@@ -560,13 +568,200 @@
     .divider { padding: 0 24px; }
     footer { padding: 50px 24px; }
   }
+  .nav-logo{
+  display:flex;
+  align-items:center;
+  text-decoration:none;
+  gap:12px;
+}
+
+.logo-img{
+  height:44px;      /* visina loga u headeru */
+  width:auto;
+  display:block;
+}
+
+/* kad se nav skupi na scroll */
+nav.scrolled .logo-img{
+  height:36px;
+}
+
+.hero h1{
+  color:#ffffff;
+  text-shadow:0 6px 25px rgba(0,0,0,0.55);
+}
+
+.hero h1 em{
+  color:#ffd66b; /* svetlije zlato */
+  text-shadow:0 6px 25px rgba(0,0,0,0.55);
+}
+
+.hero p{
+  color:#f3f7f4;
+  text-shadow:0 4px 20px rgba(0,0,0,0.5);
+}
+
+
+
+.hero-badge{
+  display:inline-block;
+  padding:8px 24px;
+  font-size:0.7rem;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:#ffd66b;
+  margin-bottom:30px;
+  background:rgba(0,0,0,0.35);
+  backdrop-filter:blur(6px);
+  border:1px solid rgba(255,255,255,0.15);
+}
+
+
+
+.btn-gold{
+  background:rgba(255,214,107,0.95);
+  color:#0d2818;
+  padding:14px 40px;
+  font-family:'Jost', sans-serif;
+  font-size:0.82rem;
+  font-weight:600;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  border:none;
+  cursor:pointer;
+  text-decoration:none;
+  transition:all 0.3s;
+  backdrop-filter:blur(6px);
+  box-shadow:0 6px 25px rgba(0,0,0,0.35);
+}
+
+.btn-gold:hover{
+  background:#ffd66b;
+  transform:translateY(-2px);
+}
+
+
+
+
+.btn-outline{
+  background:rgba(0,0,0,0.35);
+  color:#ffffff;
+  padding:14px 40px;
+  font-family:'Jost', sans-serif;
+  font-size:0.82rem;
+  font-weight:500;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  border:1px solid rgba(255,255,255,0.4);
+  cursor:pointer;
+  text-decoration:none;
+  display:inline-block;
+  backdrop-filter:blur(6px);
+  transition:all 0.3s;
+}
+
+.btn-outline:hover{
+  background:rgba(0,0,0,0.55);
+  border-color:#ffd66b;
+  color:#ffd66b;
+}
+
+
+
+.hero-content{
+  background:rgba(0,0,0,0.25);
+  backdrop-filter:blur(6px);
+  padding:40px 60px;
+  border-radius:8px;
+}
+
+
+
+@media (max-width:900px){
+  .hero-content{
+    padding:30px 24px;
+  }
+}
+
+
+
+
+.about-img-inner{
+  padding:0;
+  position:relative;
+  overflow:hidden;
+}
+
+/* SAMA SLIKA */
+.about-img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transform:scale(1.08);
+  transition:transform 0.6s ease;
+}
+
+/* PREMIUM TAMNI OVERLAY */
+.about-img-inner::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    180deg,
+    rgba(13,40,24,0.2) 0%,
+    rgba(13,40,24,0.35) 100%
+  );
+}
+
+/* HOVER = LUXURY EFFECT */
+.about-img-frame:hover .about-img{
+  transform:scale(1.15);
+}
+
+.about-img-frame{
+  border:1px solid rgba(201,168,76,0.35);
+  backdrop-filter:blur(4px);
+}
+
+
+.about-img{
+  object-position: center 30%;
+}
+
+
+
+.product-img{
+  width:100%;
+  height:160px;
+  object-fit:contain;        /* idealno za pakovanja */
+  background: rgba(0,0,0,0.15);
+  border: 1px solid var(--border);
+  padding: 10px;
+  margin-bottom:16px;
+  display:block;
+  border-radius:6px;
+}
+
+
+
+
+.slide-icon-img{
+  width: 120px;
+  height:120px;
+  object-fit:contain;
+}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav id="navbar">
-  <a href="#" class="nav-logo">Agro<span>Farm</span></a>
+<a href="#" class="nav-logo">
+  <img src="agro-mihajlovski-logo-transparent.png"
+       alt="Agro Mihajlovski"
+       class="logo-img">
+</a>
   <ul class="nav-links">
     <li><a href="#seasonal">Sezonski</a></li>
     <li><a href="#about">O nama</a></li>
@@ -671,7 +866,9 @@
     </div>
     <div class="about-visual">
       <div class="about-img-frame">
-        <div class="about-img-inner">🌾</div>
+        <div class="about-img-inner">
+  <img src="onama slika.png" alt="AgroFarm apoteka" class="about-img">
+</div>
       </div>
       <div class="about-accent"></div>
       <div class="about-stat">
@@ -789,7 +986,7 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <a class="nav-logo" href="#">Agro<span>Farm</span></a>
+      <a class="nav-logo" href="#">Mihajlovski<span>DOO</span></a>
       <p>Vaš pouzdani partner za zdravu i produktivnu biljnu proizvodnju. Kvalitet i stručnost od 2004. godine.</p>
     </div>
     <div>
@@ -814,7 +1011,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025 AgroFarm Apoteka. Sva prava zadržana.</span>
+    <span>© 2025 Mihajlovski DOO Apoteka. Sva prava zadržana.</span>
     <span>Dizajnirano sa ❤️ za srpske poljoprivrednike</span>
   </div>
 </footer>
@@ -837,10 +1034,10 @@ const SEASONS = {
     bg: "linear-gradient(135deg, #0a2010 0%, #1a4a1f 40%, #2d6e35 70%, #0d2818 100%)",
     accent: "radial-gradient(ellipse at 30% 40%, rgba(100,200,80,0.12) 0%, transparent 60%), radial-gradient(ellipse at 70% 60%, rgba(201,168,76,0.08) 0%, transparent 50%)",
     products: [
-      { emoji: "🌿", name: "Herbicid Spring Pro", desc: "Efikasna borba sa korovima u žitaricama i povrću.", tag: "Herbicid" },
-      { emoji: "🌱", name: "Starter Đubrivo NPK", desc: "Kompleksno đubrivo za snažan start vegetacije.", tag: "Ishrana" },
-      { emoji: "🦠", name: "Fungicid Mancozeb", desc: "Sistemska zaštita od gljivičnih bolesti u ranoj fazi.", tag: "Fungicid" },
-      { emoji: "🐛", name: "Insekticid Lambda", desc: "Brz udar na lisne vaši i žitnog pivca.", tag: "Insekticid" },
+      { img: "hebricid.png", name: "Herbicid Spring Pro", desc: "Efikasna borba sa korovima u žitaricama i povrću.", tag: "Herbicid" },
+      { img: "starter-djubrivo.png", name: "Starter Đubrivo NPK", desc: "Kompleksno đubrivo za snažan start vegetacije.", tag: "Ishrana" },
+      { img: "fungicid.png", name: "Fungicid Mancozeb", desc: "Sistemska zaštita od gljivičnih bolesti u ranoj fazi.", tag: "Fungicid" },
+      { img: "insekticid.png", name: "Insekticid Lambda", desc: "Brz udar na lisne vaši i žitnog pivca.", tag: "Insekticid" },
     ]
   },
   summer: {
@@ -851,10 +1048,10 @@ const SEASONS = {
     bg: "linear-gradient(135deg, #1a1200 0%, #3d2e00 40%, #5c4a10 70%, #1a1200 100%)",
     accent: "radial-gradient(ellipse at 30% 40%, rgba(255,200,50,0.1) 0%, transparent 60%), radial-gradient(ellipse at 70% 60%, rgba(200,120,0,0.08) 0%, transparent 50%)",
     products: [
-      { emoji: "🌽", name: "Herbicid Atrazin 500", desc: "Selektivni herbicid za zaštitu kukuruza od korova.", tag: "Herbicid" },
-      { emoji: "🍅", name: "Folijarna Ishrana", desc: "Prihrana mikroelementima kroz list u stresu od suše.", tag: "Ishrana" },
-      { emoji: "🔴", name: "Akaricid Vertimec", desc: "Uklanjanje pauka crvenih u voćnjacima i povrtnjacima.", tag: "Akaricid" },
-      { emoji: "🌻", name: "Fungicid Amistar", desc: "Zaštita suncokreta i kukuruza od bolesti lista.", tag: "Fungicid" },
+      { img: "hebricid.png", name: "Herbicid Spring Pro", desc: "Efikasna borba sa korovima u žitaricama i povrću.", tag: "Herbicid" },
+      { img: "starter-djubrivo.png", name: "Starter Đubrivo NPK", desc: "Kompleksno đubrivo za snažan start vegetacije.", tag: "Ishrana" },
+      { img: "fungicid.png", name: "Fungicid Mancozeb", desc: "Sistemska zaštita od gljivičnih bolesti u ranoj fazi.", tag: "Fungicid" },
+      { img: "insekticid.png", name: "Insekticid Lambda", desc: "Brz udar na lisne vaši i žitnog pivca.", tag: "Insekticid" },
     ]
   },
   autumn: {
@@ -865,10 +1062,10 @@ const SEASONS = {
     bg: "linear-gradient(135deg, #1a0d00 0%, #3d1f00 40%, #6b3a10 70%, #1a0d00 100%)",
     accent: "radial-gradient(ellipse at 30% 40%, rgba(200,120,30,0.12) 0%, transparent 60%), radial-gradient(ellipse at 70% 60%, rgba(180,80,0,0.08) 0%, transparent 50%)",
     products: [
-      { emoji: "🌾", name: "Herbicid Tribunal", desc: "Postemergentna zaštita ozime pšenice od korova.", tag: "Herbicid" },
-      { emoji: "🪱", name: "Osnovna Gnojidba", desc: "NPK 15:15:15 za unošenje pred oranje.", tag: "Đubrivo" },
-      { emoji: "🍁", name: "Fungicid Folicur", desc: "Preventivna zaštita ozimih od lisnih bolesti.", tag: "Fungicid" },
-      { emoji: "🐞", name: "Insekticid Regent", desc: "Dezinfekcija semena i zaštita od zemljišnih štetočina.", tag: "Insekticid" },
+      { img: "hebricid.png", name: "Herbicid Spring Pro", desc: "Efikasna borba sa korovima u žitaricama i povrću.", tag: "Herbicid" },
+      { img: "starter-djubrivo.png", name: "Starter Đubrivo NPK", desc: "Kompleksno đubrivo za snažan start vegetacije.", tag: "Ishrana" },
+      { img: "fungicid.png", name: "Fungicid Mancozeb", desc: "Sistemska zaštita od gljivičnih bolesti u ranoj fazi.", tag: "Fungicid" },
+      { img: "insekticid.png", name: "Insekticid Lambda", desc: "Brz udar na lisne vaši i žitnog pivca.", tag: "Insekticid" },
     ]
   },
   winter: {
@@ -879,10 +1076,10 @@ const SEASONS = {
     bg: "linear-gradient(135deg, #060d14 0%, #0d1f2d 40%, #152d3d 70%, #060d14 100%)",
     accent: "radial-gradient(ellipse at 30% 40%, rgba(100,160,220,0.1) 0%, transparent 60%), radial-gradient(ellipse at 70% 60%, rgba(201,168,76,0.06) 0%, transparent 50%)",
     products: [
-      { emoji: "🌰", name: "Sertifikovano Seme", desc: "Pšenica, ječam, uljana repica — rezervišite na vreme.", tag: "Seme" },
-      { emoji: "📦", name: "Zimski Paket NPK", desc: "Povoljniji paketi đubriva za rano reservisanje.", tag: "Paketi" },
-      { emoji: "🔬", name: "Analiza Zemljišta", desc: "Naručite analizu zemljišta i napravite plan gnojidbe.", tag: "Usluga" },
-      { emoji: "📋", name: "Plan Prskanja", desc: "Stručno savetovanje za kreiranje godišnjeg plana zaštite.", tag: "Savetovanje" },
+      { img: "hebricid.png", name: "Herbicid Spring Pro", desc: "Efikasna borba sa korovima u žitaricama i povrću.", tag: "Herbicid" },
+      { img: "starter-djubrivo.png", name: "Starter Đubrivo NPK", desc: "Kompleksno đubrivo za snažan start vegetacije.", tag: "Ishrana" },
+      { img: "fungicid.png", name: "Fungicid Mancozeb", desc: "Sistemska zaštita od gljivičnih bolesti u ranoj fazi.", tag: "Fungicid" },
+      { img: "insekticid.png", name: "Insekticid Lambda", desc: "Brz udar na lisne vaši i žitnog pivca.", tag: "Insekticid" },
     ]
   }
 };
@@ -897,14 +1094,14 @@ const FAQ_DATA = [
 ];
 
 const SLIDER_ITEMS = [
-  { icon: "🌿", name: "Herbicidi", desc: "Efikasno suzbijanje korova" },
-  { icon: "🍄", name: "Fungicidi", desc: "Zaštita od gljivičnih bolesti" },
-  { icon: "🐛", name: "Insekticidi", desc: "Borba sa štetočinama" },
-  { icon: "🌱", name: "Đubriva", desc: "Ishrana i jačanje biljaka" },
-  { icon: "🌾", name: "Seme", desc: "Sertifikovane sorte" },
-  { icon: "💧", name: "Akaricidi", desc: "Suzbijanje grinja" },
-  { icon: "🔬", name: "Biostimulatori", desc: "Prirodno ojačavanje" },
-  { icon: "🪱", name: "Nematocidi", desc: "Zaštita korenovog sistema" },
+  { iconImg:"hebricid.png", name: "Herbicidi", desc: "Efikasno suzbijanje korova" },
+  { iconImg:"fungicid.png", name: "Fungicidi", desc: "Zaštita od gljivičnih bolesti" },
+  { iconImg:"insekticid.png", name: "Insekticidi", desc: "Borba sa štetočinama" },
+  { iconImg:"starter-djubrivo.png", name: "Đubriva", desc: "Ishrana i jačanje biljaka" },
+  { iconImg:"hebricid.png", name: "Seme", desc: "Sertifikovane sorte" },
+  { iconImg:"hebricid.png", name: "Akaricidi", desc: "Suzbijanje grinja" },
+  { iconImg: "fungicid.png", name: "Biostimulatori", desc: "Prirodno ojačavanje" },
+  { iconImg: "fungicid.png", name: "Nematocidi", desc: "Zaštita korenovog sistema" },
 ];
 
 // ======== GET SEASON ========
@@ -935,7 +1132,7 @@ function initSeasonal() {
   const grid = document.getElementById('productsGrid');
   grid.innerHTML = s.products.map(p => `
     <div class="product-card">
-      <span class="product-emoji">${p.emoji}</span>
+      <img class="product-img" src="${p.img}" alt="${p.name}">
       <h3>${p.name}</h3>
       <p>${p.desc}</p>
       <span class="product-tag">${p.tag}</span>
@@ -949,7 +1146,7 @@ function initSlider() {
   const track = document.getElementById('sliderTrack');
   track.innerHTML = items.map(i => `
     <div class="slide-item">
-      <span class="slide-icon">${i.icon}</span>
+     <img class="slide-icon-img" src="${i.iconImg}" alt="${i.name}">
       <h4>${i.name}</h4>
       <p>${i.desc}</p>
     </div>
