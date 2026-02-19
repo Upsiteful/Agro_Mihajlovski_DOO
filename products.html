@@ -101,11 +101,32 @@
     .search-wrap { max-width: 100%; }
     .results-count { display: none; }
   }
+    .nav-logo{
+  display:flex;
+  align-items:center;
+  text-decoration:none;
+  gap:12px;
+}
+
+.logo-img{
+  height:44px;      /* visina loga u headeru */
+  width:auto;
+  display:block;
+}
+
+/* kad se nav skupi na scroll */
+nav.scrolled .logo-img{
+  height:36px;
+}
 </style>
 </head>
 <body>
 <nav>
-  <a href="index.html" class="nav-logo">Agro<span>Farm</span></a>
+  <a href="index.html" class="nav-logo">
+  <img src="agro-mihajlovski-logo-transparent.png"
+       alt="Agro Mihajlovski"
+       class="logo-img">
+</a>
   <a href="index.html" class="nav-back">
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
     Nazad na početnu
