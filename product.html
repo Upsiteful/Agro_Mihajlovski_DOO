@@ -253,12 +253,33 @@
     .related-grid { grid-template-columns: 1fr; }
     .features-grid { grid-template-columns: 1fr; }
   }
+    .nav-logo{
+  display:flex;
+  align-items:center;
+  text-decoration:none;
+  gap:12px;
+}
+
+.logo-img{
+  height:44px;      /* visina loga u headeru */
+  width:auto;
+  display:block;
+}
+
+/* kad se nav skupi na scroll */
+nav.scrolled .logo-img{
+  height:36px;
+}
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="index.html" class="nav-logo">Agro<span>Farm</span></a>
+ <a href="index.html" class="nav-logo">
+  <img src="agro-mihajlovski-logo-transparent.png"
+       alt="Agro Mihajlovski"
+       class="logo-img">
+</a>
   <div class="breadcrumb">
     <a href="index.html">Početna</a>
     <span>/</span>
