@@ -6,6 +6,16 @@
 <title>Detalji Proizvoda | AgroFarm Apoteka</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- =========================================================
+     EMAILJS (1/3) - UČITAJ + INIT
+     ✅ OVDE UBACIŠ PUBLIC KEY (EmailJS → Account → API Keys)
+     ========================================================= -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  emailjs.init("xDh7yX1H6scPpf4uk");
+</script>
+
 <style>
   :root {
     --dark-green: #0d2818; --mid-green: #1a3d28; --light-green: #2a5e3f;
@@ -44,9 +54,7 @@
   .product-hero-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px; align-items: start; }
 
   /* LEFT - Visual */
-  .product-visual {
-    position: sticky; top: 100px;
-  }
+  .product-visual { position: sticky; top: 100px; }
   .product-visual-frame {
     position: relative;
     background: var(--card-bg);
@@ -253,33 +261,30 @@
     .related-grid { grid-template-columns: 1fr; }
     .features-grid { grid-template-columns: 1fr; }
   }
-    .nav-logo{
-  display:flex;
-  align-items:center;
-  text-decoration:none;
-  gap:12px;
-}
 
-.logo-img{
-  height:44px;      /* visina loga u headeru */
-  width:auto;
-  display:block;
-}
-
-/* kad se nav skupi na scroll */
-nav.scrolled .logo-img{
-  height:36px;
-}
+  .nav-logo{
+    display:flex;
+    align-items:center;
+    text-decoration:none;
+    gap:12px;
+  }
+  .logo-img{
+    height:44px;
+    width:auto;
+    display:block;
+  }
+  nav.scrolled .logo-img{
+    height:36px;
+  }
 </style>
 </head>
+
 <body>
 
 <nav>
- <a href="index.html" class="nav-logo">
-  <img src="agro-mihajlovski-logo-transparent.png"
-       alt="Agro Mihajlovski"
-       class="logo-img">
-</a>
+  <a href="index.html" class="nav-logo">
+    <img src="agro-mihajlovski-logo-transparent.png" alt="Agro Mihajlovski" class="logo-img">
+  </a>
   <div class="breadcrumb">
     <a href="index.html">Početna</a>
     <span>/</span>
@@ -381,9 +386,62 @@ function renderProduct(p) {
           </div>
 
           <div class="cta-row">
-            <a href="index.html#contact" class="btn-gold">📞 Upit / Narudžbina</a>
+            <button class="btn-gold" id="orderBtn">🛒 Naruči</button>
+            <a href="index.html#contact" class="btn-outline">📞 Upit</a>
             <a href="products.html" class="btn-outline">← Nazad na katalog</a>
           </div>
+
+          <!-- ORDER MODAL -->
+          <div id="orderModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:999; padding:20px;">
+            <div style="max-width:560px; margin:60px auto; background:rgba(13,40,24,0.98); border:1px solid rgba(201,168,76,0.25); padding:22px; backdrop-filter: blur(14px);">
+
+              <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:14px;">
+                <div style="font-family:'Cormorant Garamond', serif; font-size:1.6rem; color:var(--gold-light);">Narudžbina</div>
+                <button type="button" id="closeOrder" class="btn-outline" style="padding:10px 14px;">✕</button>
+              </div>
+
+              <form id="orderForm" style="display:grid; gap:10px;">
+                <!-- EmailJS varijable -->
+                <input type="hidden" name="product" value="${p.name}">
+                <input type="hidden" name="product_id" value="${p.id}">
+
+                <label style="font-size:0.75rem; color:var(--text-muted);">Ime i prezime</label>
+                <input name="name" required style="padding:12px; border:1px solid rgba(201,168,76,0.25); background:rgba(26,61,40,0.6); color:var(--text-light);">
+
+                <label style="font-size:0.75rem; color:var(--text-muted);">Telefon</label>
+                <input name="phone" required style="padding:12px; border:1px solid rgba(201,168,76,0.25); background:rgba(26,61,40,0.6); color:var(--text-light);">
+
+                <label style="font-size:0.75rem; color:var(--text-muted);">Email (opciono)</label>
+                <input type="email" name="email" style="padding:12px; border:1px solid rgba(201,168,76,0.25); background:rgba(26,61,40,0.6); color:var(--text-light);">
+
+                <label style="font-size:0.75rem; color:var(--text-muted);">Količina</label>
+                <input type="number" name="quantity" min="1" value="1" required style="padding:12px; border:1px solid rgba(201,168,76,0.25); background:rgba(26,61,40,0.6); color:var(--text-light);">
+
+                <label style="font-size:0.75rem; color:var(--text-muted);">Adresa isporuke</label>
+                <input name="address" required style="padding:12px; border:1px solid rgba(201,168,76,0.25); background:rgba(26,61,40,0.6); color:var(--text-light);">
+
+                <label style="font-size:0.75rem; color:var(--text-muted);">Napomena</label>
+                <textarea name="note" rows="3" style="padding:12px; border:1px solid rgba(201,168,76,0.25); background:rgba(26,61,40,0.6); color:var(--text-light);"></textarea>
+
+                <!-- anti-spam (honeypot) -->
+                <input type="text" name="_gotcha" style="display:none">
+
+                <button class="btn-gold" type="submit" style="width:100%;">Pošalji narudžbinu</button>
+
+                <!-- status poruka -->
+                <div id="orderStatus"
+                  style="display:none; margin-top:10px; padding:14px;
+                  border:1px solid rgba(201,168,76,0.25);
+                  background:rgba(201,168,76,0.08);">
+                </div>
+
+                <div style="font-size:0.72rem; color:var(--text-muted); line-height:1.5;">
+                  Slanjem pristajete da vas kontaktiramo radi potvrde porudžbine.
+                </div>
+              </form>
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -466,6 +524,62 @@ function renderProduct(p) {
       }, 100 + i * 40);
     });
   }, 50);
+
+  // ORDER MODAL LOGIC
+  const orderBtn = document.getElementById('orderBtn');
+  const orderModal = document.getElementById('orderModal');
+  const closeOrder = document.getElementById('closeOrder');
+  const orderForm = document.getElementById('orderForm');
+  const status = document.getElementById('orderStatus');
+
+  orderBtn?.addEventListener('click', () => {
+    if (status) status.style.display = 'none';
+    orderModal.style.display = 'block';
+  });
+
+  closeOrder?.addEventListener('click', () => {
+    orderModal.style.display = 'none';
+  });
+
+  orderModal?.addEventListener('click', (e) => {
+    if (e.target === orderModal) orderModal.style.display = 'none';
+  });
+
+  // =========================================================
+  // EMAILJS (2/3) - SEND FORM
+  // ✅ OVDE UBACIŠ SERVICE ID i TEMPLATE ID
+  // =========================================================
+  orderForm?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // honeypot anti-spam
+    const gotcha = orderForm.querySelector('input[name="_gotcha"]');
+    if (gotcha && gotcha.value) return;
+
+    try {
+      await emailjs.sendForm(
+        "service_8qua0pz",   // ✅ EmailJS → Email Services → Service ID
+        "template_ab93sff",  // ✅ EmailJS → Email Templates → Template ID
+        orderForm
+      );
+
+      if (status) {
+        status.style.display = 'block';
+        status.textContent = "✅ Narudžbina je poslata.";
+      }
+
+      orderForm.reset();
+
+      setTimeout(() => {
+        orderModal.style.display = 'none';
+        if (status) status.style.display = 'none';
+      }, 1200);
+
+    } catch (err) {
+      console.error(err);
+      alert("Greška pri slanju. Pokušajte ponovo.");
+    }
+  });
 }
 
 // INIT
