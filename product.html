@@ -276,6 +276,26 @@
   nav.scrolled .logo-img{
     height:36px;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+  .product-img-large{
+  width: 100%;
+  max-width: 320px;
+  height: 260px;
+  display: block;
+  object-fit: contain; /* ili cover */
+  filter: drop-shadow(0 8px 30px rgba(0,0,0,0.45));
+}
 </style>
 </head>
 
@@ -334,7 +354,11 @@ function renderProduct(p) {
         <div class="product-visual">
           <div class="product-visual-frame">
             <div style="text-align:center;">
-              <div class="product-emoji-large">${p.emoji}</div>
+            <img class="product-img-large"
+     src="${p.img}"
+     alt="${p.name}"
+     loading="lazy"
+     onerror="this.onerror=null; this.src='images/placeholder.png';">
               ${p.badge ? `<div class="product-badge-large">${p.badge}</div>` : ''}
             </div>
           </div>
