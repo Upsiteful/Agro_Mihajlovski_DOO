@@ -1,7 +1,7 @@
 const ALL_PRODUCTS = [
   {
     id: 101892, emoji: "🛒", name: "Kolica Compact 75 l Villager", cat: "ostalo",
-    price: 12000,
+    price: 6000,
     img: "Kolica Villager Compact 75 l.png",
     desc: "Kolica (tačke) zapremine 75L za rad u dvorištu i polju.",
     fullDesc: "Kompaktna kolica VILLAGER zapremine 75 litara, pogodna za prevoz zemlje, đubriva, alata i drugih materijala.",
@@ -89,7 +89,7 @@ const ALL_PRODUCTS = [
   },
   {
     id: 116472, emoji: "🧴", name: "Mast višenamenska Vill 120 g", cat: "ostalo",
-    price: 2340,
+    price: 390,
     img: "MAST VISENAMENSKA VILL 120 GR.png",
     desc: "Višenamenska mast za podmazivanje, 120 g.",
     fullDesc: "Višenamenska mast (120 g) za podmazivanje i zaštitu pokretnih delova alata i mašina.",
@@ -122,7 +122,7 @@ const ALL_PRODUCTS = [
   },
   {
     id: 118977, emoji: "🪚", name: "Ulje za lanac testerol 1l villager", cat: "ostalo",
-    price: 3840,
+    price: 320,
     img: "Ulje za lanac testerol 1l villager.png",
     desc: "Ulje za podmazivanje lanca testere, 1L.",
     fullDesc: "Ulje za lanac testere (Testerol) VILLAGER u pakovanju od 1 litra za podmazivanje lanca i vodilice.",
@@ -133,7 +133,7 @@ const ALL_PRODUCTS = [
   },
   {
     id: 121024, emoji: "🪚", name: "Ulje za lanac testerol 3l villager", cat: "ostalo",
-    price: 2700,
+    price: 900,
     img: "ULJE ZA LANAC TESTEROL 3L.png",
     desc: "Ulje za lanac testere, 3L.",
     fullDesc: "Ulje za lanac testere (Testerol) u pakovanju od 3 litra za redovno podmazivanje lanca i vodilice.",
@@ -144,7 +144,7 @@ const ALL_PRODUCTS = [
   },
   {
     id: 120994, emoji: "🪚", name: "Ulje za lanac 5l AGM", cat: "ostalo",
-    price: 4350,
+    price: 1450,
     img: "Ulje za lanac 5l AGM.png",
     desc: "Ulje za lanac testere, 5L (AGM).",
     fullDesc: "AGM ulje za lanac u pakovanju od 5 litara za podmazivanje lanca i vodilice motornih testera.",
@@ -155,7 +155,7 @@ const ALL_PRODUCTS = [
   },
   {
     id: 120306, emoji: "🧪", name: "Prskalica Hortus 5 l", cat: "ostalo",
-    price: 5800,
+    price: 1450,
     img: "PRSKALICA HORTUS 5L.png",
     desc: "Ručna prskalica zapremine 5L.",
     fullDesc: "Ručna prskalica HORTUS 5L za tretmane u bašti, voćnjaku i oko kuće (zaštita bilja, prihrana i sl.).",
@@ -166,7 +166,7 @@ const ALL_PRODUCTS = [
   },
   {
     id: 120307, emoji: "🧪", name: "Prskalica Hortus 8 l", cat: "ostalo",
-    price: 6200,
+    price: 1550,
     img: "PRSKALICA HORTUS 8L.png",
     desc: "Ručna prskalica zapremine 8L.",
     fullDesc: "Ručna prskalica HORTUS 8L pogodna za veće tretmane u bašti i voćnjaku.",
@@ -177,7 +177,7 @@ const ALL_PRODUCTS = [
   },
   {
     id: 120305, emoji: "🧪", name: "Prskalica Hortus 10 l", cat: "ostalo",
-    price: 6600,
+    price: 1650,
     img: "PRSKALICA HORTUS 10L.png",
     desc: "Ručna prskalica zapremine 10L.",
     fullDesc: "Ručna prskalica HORTUS 10L za tretmane zaštite i prihrane na većim površinama.",
@@ -188,7 +188,7 @@ const ALL_PRODUCTS = [
   },
   {
     id: 121865, emoji: "🪚", name: "Ulje za lanac testerol 2l villager", cat: "ostalo",
-    price: 6500,
+    price: 650,
     img: "ULJE ZA LANAC TESTEROL 2L.png",
     desc: "Ulje za lanac testere, 2L.",
     fullDesc: "Ulje za lanac testere (Testerol) u pakovanju od 2 litra za podmazivanje lanca i vodilice.",
