@@ -6,6 +6,11 @@
 <title>AgroFarm Apoteka | Premium Poljoprivredni Asortiman</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  emailjs.init("E1w8CvAblnhQXph_c");
+</script>
 <style>
   :root {
     --dark-green: #0d2818;
@@ -811,14 +816,14 @@ nav.scrolled .logo-img{
     <div class="slider-track" id="sliderTrack"></div>
   </div>
   <div class="divider" style="margin-top:40px;">
-    <div class="divider-line"></div>
+     <div class="divider-line"></div>
     <div class="divider-diamond"></div>
-    <div class="divider-line"></div>
+     <div class="divider-line"></div>  
   </div>
 </div>
 
-<!-- SEASONAL PRODUCTS -->
-<div class="seasonal-section" id="seasonal">
+ <!-- SEASONAL PRODUCTS -->
+<!-- <div class="seasonal-section" id="seasonal">
   <div class="seasonal-bg" id="seasonalBg"></div>
   <div class="seasonal-content">
     <div class="season-badge" id="seasonBadge">🌱 Proleće — Sezonska preporuka</div>
@@ -831,7 +836,7 @@ nav.scrolled .logo-img{
     </div>
     <div class="products-grid" id="productsGrid"></div>
   </div>
-</div>
+</div>  -->
 
 <!-- ABOUT -->
 <section id="about">
@@ -940,42 +945,49 @@ nav.scrolled .logo-img{
       </div>
     </div>
     <div>
-      <form class="contact-form" id="contactForm" onsubmit="submitForm(event)">
-        <div class="form-row">
-          <div class="form-group">
-            <label>Ime i prezime</label>
-            <input type="text" placeholder="Marko Marković" required>
-          </div>
-          <div class="form-group">
-            <label>Telefon</label>
-            <input type="tel" placeholder="+381 ...">
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Email adresa</label>
-          <input type="email" placeholder="vas@email.com" required>
-        </div>
-        <div class="form-group">
-          <label>Tema</label>
-          <select>
-            <option>Upit o proizvodu</option>
-            <option>Narudžbina</option>
-            <option>Savetovanje</option>
-            <option>Dostava</option>
-            <option>Ostalo</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Poruka</label>
-          <textarea placeholder="Opišite vaš upit..."></textarea>
-        </div>
-        <div class="form-submit">
-          <button type="submit" class="btn-gold" style="width:100%;border:none;cursor:pointer;">Pošalji poruku</button>
-        </div>
-        <div class="form-success" id="formSuccess">
-          ✓ Hvala! Vaša poruka je poslata. Javićemo se uskoro.
-        </div>
-      </form>
+     <form class="contact-form" id="contactForm">
+  <div class="form-row">
+    <div class="form-group">
+      <label>Ime i prezime</label>
+      <input type="text" name="name" placeholder="Marko Marković" required>
+    </div>
+    <div class="form-group">
+      <label>Telefon</label>
+      <input type="tel" name="phone" placeholder="+381 ...">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Email adresa</label>
+    <input type="email" name="email" placeholder="vas@email.com" required>
+  </div>
+
+  <div class="form-group">
+    <label>Tema</label>
+    <select name="subject">
+      <option>Upit o proizvodu</option>
+      <option>Narudžbina</option>
+      <option>Savetovanje</option>
+      <option>Dostava</option>
+      <option>Ostalo</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Poruka</label>
+    <textarea name="message" placeholder="Opišite vaš upit..."></textarea>
+  </div>
+
+  <input type="text" name="_gotcha" style="display:none">
+
+  <div class="form-submit">
+    <button type="submit" class="btn-gold" style="width:100%;border:none;cursor:pointer;">Pošalji poruku</button>
+  </div>
+
+  <div class="form-success" id="formSuccess">
+    ✓ Hvala! Vaša poruka je poslata. Javićemo se uskoro.
+  </div>
+</form>
     </div>
   </div>
 </section>
@@ -1022,6 +1034,11 @@ nav.scrolled .logo-img{
 </a>
 
 <script>
+  await emailjs.sendForm(
+  "service_jk99abi",
+  "template_4ancssc",
+  contactForm
+);
 // ======== SEASON DATA ========
 const SEASONS = {
   spring: {
@@ -1190,12 +1207,41 @@ function closeMobile() {
 }
 
 // ======== FORM ========
-function submitForm(e) {
-  e.preventDefault();
+function initContactForm() {
+  const contactForm = document.getElementById('contactForm');
   const success = document.getElementById('formSuccess');
-  success.style.display = 'block';
-  e.target.querySelectorAll('input,textarea,select').forEach(el => el.value = '');
-  setTimeout(() => { success.style.display = 'none'; }, 5000);
+
+  if (!contactForm || !success) return;
+
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const gotcha = contactForm.querySelector('input[name="_gotcha"]');
+    if (gotcha && gotcha.value) return;
+
+    success.style.display = 'none';
+
+    try {
+      await emailjs.sendForm(
+        "service_jk99abi",
+        "template_8i274kq",
+        contactForm
+      );
+
+      success.textContent = "✓ Hvala! Vaša poruka je poslata. Javićemo se uskoro.";
+      success.style.display = 'block';
+      contactForm.reset();
+
+      setTimeout(() => {
+        success.style.display = 'none';
+      }, 5000);
+
+    } catch (err) {
+      console.error("EmailJS greška:", err);
+      success.textContent = "✕ Došlo je do greške pri slanju. Pokušajte ponovo.";
+      success.style.display = 'block';
+    }
+  });
 }
 
 // ======== INTERSECTION OBSERVER (simple fade-in) ========
@@ -1216,9 +1262,10 @@ document.querySelectorAll('.product-card, .feature-row, .faq-item, .contact-item
 });
 
 // ======== INIT ========
-initSeasonal();
+// initSeasonal();
 initSlider();
 initFAQ();
+initContactForm();
 </script>
 </body>
 </html>
