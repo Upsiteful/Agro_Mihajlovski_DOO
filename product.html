@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Detalji Proizvoda | AgroFarm Apoteka</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<title>Proizvod | AgroMihajlovski</title><link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+<meta name="description" content="Detalji proizvoda, primena, doziranje, karenca i aktivna supstanca. Mihajlovski DOO - poljoprivredna apoteka Đurđevo.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://www.agromihajlovski.rs/product.html">
 <!-- =========================================================
      EMAILJS (1/3) - UČITAJ + INIT
      ✅ OVDE UBACIŠ PUBLIC KEY (EmailJS → Account → API Keys)
@@ -15,6 +16,57 @@
 <script>
   emailjs.init("E1w8CvAblnhQXph_c");
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": p.name,
+  "description": p.fullDesc,
+  "category": p.cat,
+  "image": `https://www.agromihajlovski.rs/${p.img}`,
+  "brand": {
+    "@type": "Brand",
+    "name": "AgroMihajlovski"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "RSD",
+    "availability": "https://schema.org/InStock",
+    "url": `https://www.agromihajlovski.rs/product.html?id=${p.id}`
+  }
+};
+
+const oldSchema = document.getElementById('product-schema');
+if (oldSchema) oldSchema.remove();
+
+const script = document.createElement('script');
+script.type = 'application/ld+json';
+script.id = 'product-schema';
+script.textContent = JSON.stringify(schema);
+document.head.appendChild(script);
+
+
+
+
+
+
+
+
+
+
+
 
 <style>
   :root {
