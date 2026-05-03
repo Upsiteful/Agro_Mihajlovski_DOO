@@ -197,4 +197,349 @@ const ALL_PRODUCTS = [
     season: "Sva godišnja doba",
     relatedIds: []
   },
+
+
+
+
+
+  {
+    id: 116274, emoji: "🌱", name: "Farma Plus J1 40/1", cat: "ostalo",
+    price: 1750,
+    img: "Farma Plus J1 40-1.png",
+    desc: "Farma Plus J1, pakovanje 40/1.",
+    fullDesc: "Farma Plus J1 u pakovanju 40/1.",
+    activeSubstance: "—", dosage: "—", waiting: "—", crops: [],
+    features: ["Pakovanje 40/1", "Za poljoprivrednu upotrebu"],
+    season: "Sva godišnja doba",
+    relatedIds: []
+  },
+  {
+    id: 114944, emoji: "🌱", name: "Farma Plus M 40/1", cat: "ostalo",
+    price: 1950,
+    img: "Farma Plus M 40-1.png",
+    desc: "Farma Plus M, pakovanje 40/1.",
+    fullDesc: "Farma Plus M u pakovanju 40/1.",
+    activeSubstance: "—", dosage: "—", waiting: "—", crops: [],
+    features: ["Pakovanje 40/1", "Za poljoprivrednu upotrebu"],
+    season: "Sva godišnja doba",
+    relatedIds: []
+  },
+  {
+    id: 117402, emoji: "🌱", name: "Farma Plus TOV I 40/1", cat: "ostalo",
+    price: 2000,
+    img: "Farma Plus TOV I 40-1.png",
+    desc: "Farma Plus TOV I, pakovanje 40/1.",
+    fullDesc: "Farma Plus TOV I u pakovanju 40/1.",
+    activeSubstance: "—", dosage: "—", waiting: "—", crops: [],
+    features: ["Pakovanje 40/1", "Za poljoprivrednu upotrebu"],
+    season: "Sva godišnja doba",
+    relatedIds: []
+  },
+  {
+    id: 118200, emoji: "🌱", name: "Farma Plus TOV II 40/1", cat: "ostalo",
+    price: 1900,
+    img: "Farma Plus TOV II 40-1.png",
+    desc: "Farma Plus TOV II, pakovanje 40/1.",
+    fullDesc: "Farma Plus TOV II u pakovanju 40/1.",
+    activeSubstance: "—", dosage: "—", waiting: "—", crops: [],
+    features: ["Pakovanje 40/1", "Za poljoprivrednu upotrebu"],
+    season: "Sva godišnja doba",
+    relatedIds: []
+  },
+  {
+    id: 117403, emoji: "🌱", name: "Farma Plus N Plavi 20/1", cat: "ostalo",
+    price: 1150,
+    img: "Farma Plus N Plavi 20-1.png",
+    desc: "Farma Plus N Plavi, pakovanje 20/1.",
+    fullDesc: "Farma Plus N Plavi u pakovanju 20/1.",
+    activeSubstance: "—", dosage: "—", waiting: "—", crops: [],
+    features: ["Pakovanje 20/1", "Za poljoprivrednu upotrebu"],
+    season: "Sva godišnja doba",
+    relatedIds: []
+  },
+  {
+    id: 118910, emoji: "🌱", name: "Farma Plus TOV I 20/1", cat: "ostalo",
+    price: 1000,
+    img: "Farma Plus TOV I 20-1.png",
+    desc: "Farma Plus TOV I, pakovanje 20/1.",
+    fullDesc: "Farma Plus TOV I u pakovanju 20/1.",
+    activeSubstance: "—", dosage: "—", waiting: "—", crops: [],
+    features: ["Pakovanje 20/1", "Za poljoprivrednu upotrebu"],
+    season: "Sva godišnja doba",
+    relatedIds: []
+  },
+
+  {
+    id: 109976, emoji: "🌿", name: "Talisman 1/1", cat: "zastita",
+    price: 940,
+    img: "Talisman 1-1.png",
+    desc: "Talisman, pakovanje 1/1.",
+    fullDesc: "Talisman u pakovanju 1/1.",
+    activeSubstance: "—", dosage: "Po preporuci proizvođača", waiting: "—", crops: [],
+    features: ["Pakovanje 1/1", "Sredstvo za zaštitu bilja"],
+    season: "Proleće / Leto",
+    relatedIds: []
+  },
+  {
+    id: 121247, emoji: "🌿", name: "Pylon Plus 1L", cat: "zastita",
+    price: 4850,
+    img: "Pylon Plus 1L.png",
+    desc: "Pylon Plus, pakovanje 1L.",
+    fullDesc: "Pylon Plus u pakovanju od 1 litra.",
+    activeSubstance: "—", dosage: "Po preporuci proizvođača", waiting: "—", crops: [],
+    features: ["Pakovanje 1L", "Sredstvo za zaštitu bilja"],
+    season: "Proleće / Leto",
+    relatedIds: []
+  },
+  {
+    id: 112399, emoji: "🌿", name: "Galbenon 1L", cat: "zastita",
+    price: 1100,
+    img: "Galbenon 1L.png",
+    desc: "Galbenon, pakovanje 1L.",
+    fullDesc: "Galbenon u pakovanju od 1 litra.",
+    activeSubstance: "—", dosage: "Po preporuci proizvođača", waiting: "—", crops: [],
+    features: ["Pakovanje 1L", "Sredstvo za zaštitu bilja"],
+    season: "Proleće / Leto",
+    relatedIds: []
+  },
+
+  {
+    id: 111147, emoji: "🌱", name: "Topsan 25/1", cat: "ostalo",
+    price: 5800,
+    img: "Topsan 25-1.png",
+    desc: "Topsan, pakovanje 25/1.",
+    fullDesc: "Topsan u pakovanju 25/1.",
+    activeSubstance: "—", dosage: "—", waiting: "—", crops: [],
+    features: ["Pakovanje 25/1", "Za poljoprivrednu upotrebu"],
+    season: "Sva godišnja doba",
+    relatedIds: []
+  },
+  {
+    id: 111120, emoji: "🌱", name: "ProtAmino Premium 10/1", cat: "ostalo",
+    price: 1160,
+    img: "ProtAmino Premium 10-1.png",
+    desc: "ProtAmino Premium, pakovanje 10/1.",
+    fullDesc: "ProtAmino Premium u pakovanju 10/1.",
+    activeSubstance: "—", dosage: "—", waiting: "—", crops: [],
+    features: ["Pakovanje 10/1", "Za poljoprivrednu upotrebu"],
+    season: "Sva godišnja doba",
+    relatedIds: []
+  },
+  {
+    id: 111119, emoji: "🌱", name: "ProtAmino Premium 25/1", cat: "ostalo",
+    price: 2800,
+    img: "ProtAmino Premium 25-1.png",
+    desc: "ProtAmino Premium, pakovanje 25/1.",
+    fullDesc: "ProtAmino Premium u pakovanju 25/1.",
+    activeSubstance: "—", dosage: "—", waiting: "—", crops: [],
+    features: ["Pakovanje 25/1", "Za poljoprivrednu upotrebu"],
+    season: "Sva godišnja doba",
+    relatedIds: []
+  },
+  {
+    id: 111116, emoji: "🌱", name: "ProtAmino Piggi 10/1", cat: "ostalo",
+    price: 1400,
+    img: "ProtAmino Piggi 10-1.png",
+    desc: "ProtAmino Piggi, pakovanje 10/1.",
+    fullDesc: "ProtAmino Piggi u pakovanju 10/1.",
+    activeSubstance: "—", dosage: "—", waiting: "—", crops: [],
+    features: ["Pakovanje 10/1", "Za poljoprivrednu upotrebu"],
+    season: "Sva godišnja doba",
+    relatedIds: []
+  },
+
+    {
+    id: 112437, emoji: "🌿", name: "Ektanon 100ml", cat: "zastita",
+    price: 860,
+    img: "Ektanon 100ml.png",
+    desc: "Ektanon, pakovanje 100 ml.",
+    fullDesc: "Ektanon u pakovanju od 100 ml.",
+    activeSubstance: "—", dosage: "Po preporuci proizvođača", waiting: "—", crops: [],
+    features: ["Pakovanje 100 ml", "Sredstvo za zaštitu bilja"],
+    season: "Proleće / Leto",
+    relatedIds: []
+  },
+
+  {
+    id: 111573, emoji: "🐔", name: "Veta Super Kosvit 1kg", cat: "ostalo",
+    price: 200,
+    img: "Veta Super Kosvit 1kg.png",
+    desc: "Veta Super Kosvit, pakovanje 1 kg.",
+    fullDesc: "Veta Super Kosvit u pakovanju od 1 kg.",
+    activeSubstance: "—", dosage: "—", waiting: "—", crops: [],
+    features: ["Pakovanje 1 kg", "Za životinje"],
+    season: "Sva godišnja doba",
+    relatedIds: []
+  },
+  {
+    id: 111570, emoji: "🐔", name: "Veta Eko Jaje 1kg", cat: "ostalo",
+    price: 220,
+    img: "Veta Eko Jaje 1kg.png",
+    desc: "Veta Eko Jaje, pakovanje 1 kg.",
+    fullDesc: "Veta Eko Jaje u pakovanju od 1 kg.",
+    activeSubstance: "—", dosage: "—", waiting: "—", crops: [],
+    features: ["Pakovanje 1 kg", "Za živinu"],
+    season: "Sva godišnja doba",
+    relatedIds: []
+  },
+  {
+    id: 111567, emoji: "🐔", name: "Veta Specijal Max-Mix 4kg", cat: "ostalo",
+    price: 430,
+    img: "Veta Specijal Max-Mix 4kg.png",
+    desc: "Veta Specijal Max-Mix, pakovanje 4 kg.",
+    fullDesc: "Veta Specijal Max-Mix u pakovanju od 4 kg.",
+    activeSubstance: "—", dosage: "—", waiting: "—", crops: [],
+    features: ["Pakovanje 4 kg", "Za životinje"],
+    season: "Sva godišnja doba",
+    relatedIds: []
+  },
+  {
+    id: 111574, emoji: "🐔", name: "Veta Super Kosvit 2kg", cat: "ostalo",
+    price: 290,
+    img: "Veta Super Kosvit 2kg.png",
+    desc: "Veta Super Kosvit, pakovanje 2 kg.",
+    fullDesc: "Veta Super Kosvit u pakovanju od 2 kg.",
+    activeSubstance: "—", dosage: "—", waiting: "—", crops: [],
+    features: ["Pakovanje 2 kg", "Za životinje"],
+    season: "Sva godišnja doba",
+    relatedIds: []
+  },
+
+  {
+    id: 101525, emoji: "🛠️", name: "Električni mešač za boju 1050W VEM-1050", cat: "ostalo",
+    price: 9300,
+    img: "Elektricni mesac za boju 1050W VEM-1050.png",
+    desc: "Električni mešač za boju snage 1050W.",
+    fullDesc: "Električni mešač za boju VEM-1050 snage 1050W.",
+    activeSubstance: "—", dosage: "—", waiting: "—", crops: [],
+    features: ["Snaga 1050W", "Za mešanje boje i mase"],
+    season: "Sva godišnja doba",
+    relatedIds: []
+  },
+  {
+    id: 102729, emoji: "🧪", name: "Prskalica Villager 0.5L", cat: "ostalo",
+    price: 250,
+    img: "Prskalica Villager 0.5L.png",
+    desc: "Ručna prskalica zapremine 0.5L.",
+    fullDesc: "Ručna prskalica Villager zapremine 0.5L.",
+    activeSubstance: "—", dosage: "—", waiting: "—", crops: [],
+    features: ["Zapremina 0.5L", "Ručna upotreba"],
+    season: "Sva godišnja doba",
+    relatedIds: []
+  },
+  {
+    id: 119178, emoji: "🧰", name: "Prostirka Bomber 1.05x100m crna 100gr", cat: "ostalo",
+    price: 80,
+    img: "Prostirka Bomber 1.05x100m crna 100gr.png",
+    desc: "Crna prostirka Bomber, 1.05x100m, 100gr.",
+    fullDesc: "Prostirka Bomber crna, dimenzija 1.05x100m, 100gr.",
+    activeSubstance: "—", dosage: "—", waiting: "—", crops: [],
+    features: ["Dimenzije 1.05x100m", "Crna", "100gr"],
+    season: "Sva godišnja doba",
+    relatedIds: []
+  },
+  {
+    id: 122735, emoji: "🧪", name: "Prskalica Hortus 16L", cat: "ostalo",
+    price: 2600,
+    img: "Prskalica Hortus 16L.png",
+    desc: "Ručna prskalica zapremine 16L.",
+    fullDesc: "Prskalica Hortus zapremine 16L za baštu, voćnjak i dvorište.",
+    activeSubstance: "—", dosage: "—", waiting: "—", crops: [],
+    features: ["Zapremina 16L", "Za baštu i voćnjak"],
+    season: "Proleće / Leto",
+    relatedIds: []
+  },
+
+
+
+
+
+    {
+    id: 101290, emoji: "🪚", name: "Rezna ploča za metal 115x1.2 mm", cat: "ostalo",
+    price: 50,
+    img: "Rezna ploca 115x1.2.png",
+    desc: "Rezna ploča za metal 115x1.2 mm.",
+    fullDesc: "Rezna ploča za sečenje metala dimenzije 115x1.2 mm.",
+    activeSubstance: "—", dosage: "—", waiting: "—", crops: [],
+    features: ["115x1.2 mm", "Za metal"],
+    season: "Sva godišnja doba",
+    relatedIds: []
+  },
+  {
+    id: 101291, emoji: "🪚", name: "Rezna ploča za metal 125x1.0 mm", cat: "ostalo",
+    price: 60,
+    img: "Rezna ploca 125x1.0.png",
+    desc: "Rezna ploča za metal 125x1.0 mm.",
+    fullDesc: "Rezna ploča za sečenje metala dimenzije 125x1.0 mm.",
+    activeSubstance: "—", dosage: "—", waiting: "—", crops: [],
+    features: ["125x1.0 mm", "Za metal"],
+    season: "Sva godišnja doba",
+    relatedIds: []
+  },
+  {
+    id: 101292, emoji: "🪚", name: "Rezna ploča za metal 125x1.2 mm", cat: "ostalo",
+    price: 60,
+    img: "Rezna ploca 125x1.2.png",
+    desc: "Rezna ploča za metal 125x1.2 mm.",
+    fullDesc: "Rezna ploča za sečenje metala dimenzije 125x1.2 mm.",
+    activeSubstance: "—", dosage: "—", waiting: "—", crops: [],
+    features: ["125x1.2 mm", "Za metal"],
+    season: "Sva godišnja doba",
+    relatedIds: []
+  },
+  {
+    id: 101293, emoji: "🪚", name: "Rezna ploča za metal 150x1.2 mm", cat: "ostalo",
+    price: 90,
+    img: "Rezna ploca 150x1.2.png",
+    desc: "Rezna ploča za metal 150x1.2 mm.",
+    fullDesc: "Rezna ploča za sečenje metala dimenzije 150x1.2 mm.",
+    activeSubstance: "—", dosage: "—", waiting: "—", crops: [],
+    features: ["150x1.2 mm", "Za metal"],
+    season: "Sva godišnja doba",
+    relatedIds: []
+  },
+  {
+    id: 101294, emoji: "🪚", name: "Rezna ploča za metal 150x1.6 mm", cat: "ostalo",
+    price: 90,
+    img: "Rezna ploca 150x1.6.png",
+    desc: "Rezna ploča za metal 150x1.6 mm.",
+    fullDesc: "Rezna ploča za sečenje metala dimenzije 150x1.6 mm.",
+    activeSubstance: "—", dosage: "—", waiting: "—", crops: [],
+    features: ["150x1.6 mm", "Za metal"],
+    season: "Sva godišnja doba",
+    relatedIds: []
+  },
+  {
+    id: 101295, emoji: "🪚", name: "Rezna ploča za metal 180x1.6 mm", cat: "ostalo",
+    price: 110,
+    img: "Rezna ploca 180x1.6.png",
+    desc: "Rezna ploča za metal 180x1.6 mm.",
+    fullDesc: "Rezna ploča za sečenje metala dimenzije 180x1.6 mm.",
+    activeSubstance: "—", dosage: "—", waiting: "—", crops: [],
+    features: ["180x1.6 mm", "Za metal"],
+    season: "Sva godišnja doba",
+    relatedIds: []
+  },
+  {
+    id: 101296, emoji: "🪚", name: "Rezna ploča za metal 230x2.0 mm", cat: "ostalo",
+    price: 170,
+    img: "Rezna ploca 230x2.0.png",
+    desc: "Rezna ploča za metal 230x2.0 mm.",
+    fullDesc: "Rezna ploča za sečenje metala dimenzije 230x2.0 mm.",
+    activeSubstance: "—", dosage: "—", waiting: "—", crops: [],
+    features: ["230x2.0 mm", "Za metal"],
+    season: "Sva godišnja doba",
+    relatedIds: []
+  },
+  {
+    id: 122736, emoji: "🔧", name: "Fuse set u koferu 3220 + baterija + punjač", cat: "ostalo",
+    price: 9000,
+    img: "Fuse set u koferu 3220.png",
+    desc: "Set alata u koferu sa baterijom i punjačem.",
+    fullDesc: "Fuse set u koferu 3220 sa baterijom i punjačem, komplet za rad.",
+    activeSubstance: "—", dosage: "—", waiting: "—", crops: [],
+    features: ["Kofer", "Baterija", "Punjač", "Komplet"],
+    season: "Sva godišnja doba",
+    relatedIds: []
+  }
 ];
