@@ -29,36 +29,6 @@
 
 
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": p.name,
-  "description": p.fullDesc,
-  "category": p.cat,
-  "image": `https://www.agromihajlovski.rs/${p.img}`,
-  "brand": {
-    "@type": "Brand",
-    "name": "AgroMihajlovski"
-  },
-  "offers": {
-    "@type": "Offer",
-    "priceCurrency": "RSD",
-    "availability": "https://schema.org/InStock",
-    "url": `https://www.agromihajlovski.rs/product.html?id=${p.id}`
-  }
-};
-
-const oldSchema = document.getElementById('product-schema');
-if (oldSchema) oldSchema.remove();
-
-const script = document.createElement('script');
-script.type = 'application/ld+json';
-script.id = 'product-schema';
-script.textContent = JSON.stringify(schema);
-document.head.appendChild(script);
-
-
-
 
 
 
